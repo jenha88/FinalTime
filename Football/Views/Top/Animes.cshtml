@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Football.Models.Anime>
+
+@{
+    ViewBag.Title = $"Top {@Model.ToList().Count} Animes";
+}
+
+
+<h2>Top @Model.ToList().Count Animes</h2>
+@{int number = 1;}
+
+<table class="table">
+    <tr>
+        <th>
+            Rank
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.episodes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rating)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @number
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.episodes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+
+
+        </tr>
+        { number += 1; }
+    }
+
+</table>

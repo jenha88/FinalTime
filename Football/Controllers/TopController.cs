@@ -15,41 +15,27 @@ namespace Football.Controllers
         private DB_128040_practiceEntities db = new DB_128040_practiceEntities();
 
         // GET: Top
-        public ActionResult Animes()
+        public ActionResult Index()
         {
-            var animes = db.Animes.OrderByDescending(x => x.name).Take(10);
+            var animes = db.Animes.OrderByDescending(x => x.rating).Take(10);
             return View(animes);
         }
 
-        // GET: Top/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Anime anime = db.Animes.Find(id);
-            if (anime == null)
-            {
-                return HttpNotFound();
-            }
-            return View(anime);
-        }
-        public ActionResult Animes(int? id)
+        public ActionResult Animes(int? number)
         {
             if (number == null)
             {
-                var movies = db.Animes.OrderByDescending(x => x.name).Take(10);
-                return View(movies);
+                var A= db.Animes.OrderByDescending(x => x.rating).Take(10);
+                return View(A);
 
             }
-            Anime anime = db.Animes.Find(id);
-            var animes = db.Animes.OrderByDescending(x => x.name).Take((int)number);
-            if (anime == null)
+            
+            var animes = db.Animes.OrderByDescending(x => x.rating).Take((int)number);
+            if (animes == null)
             {
                 return HttpNotFound();
             }
-            return View(anime);
+            return View(animes);
         }  
 
 

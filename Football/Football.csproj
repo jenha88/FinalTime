@@ -233,6 +233,8 @@
     <Content Include="Views\Animes\Rank.cshtml" />
     <Content Include="Views\Top\Details.cshtml" />
     <Content Include="Views\Top\Index.cshtml" />
+    <Content Include="Views\Top\Animes.cshtml" />
+    <Content Include="Views\Spotifies\Artist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

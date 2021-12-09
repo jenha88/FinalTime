@@ -17,6 +17,8 @@ namespace Football.Controllers
         // GET: Spotifies
         public ActionResult Index()
         {
+            var spots = db.Spotifies.OrderByDescending(x => x.Popularity).Take(10);
+
             return View(db.Spotifies.ToList());
         }
 
