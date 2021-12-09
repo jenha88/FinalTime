@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Football.Models.Anime>
 
 @{
-    ViewBag.Title = "Rank";
+    ViewBag.Title = "Index";
 }
 
-<h2>Rank</h2>
-
+<h2>Index</h2>
+@{ int number = 1; }
 <table class="table">
     <tr>
         <th>
@@ -23,7 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.rating)
         </th>
-
+        <th>
+            @Html.DisplayNameFor(model => model.members)
+        </th>
         <th></th>
     </tr>
 
@@ -44,9 +46,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.rating)
         </td>
-        
+        <td>
+            @Html.DisplayFor(modelItem => item.members)
+        </td>
        
-    </tr>
+    </tr>      
+    { number += 1; }
 }
 
 </table>

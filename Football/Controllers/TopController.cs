@@ -10,17 +10,18 @@ using Football.Models;
 
 namespace Football.Controllers
 {
-    public class AnimesController : Controller
+    public class TopController : Controller
     {
         private DB_128040_practiceEntities db = new DB_128040_practiceEntities();
 
-        // GET: Animes
-        public ActionResult Index()
+        // GET: Top
+        public ActionResult Animes()
         {
-            return View(db.Animes.ToList());
+            var animes = db.Animes.OrderByDescending(x => x.name).Take(10);
+            return View(animes);
         }
 
-        // GET: Animes/Details/5
+        // GET: Top/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,20 +35,23 @@ namespace Football.Controllers
             }
             return View(anime);
         }
-
-        public ActionResult Rank(int? id)
+        public ActionResult Animes(int? id)
         {
-            if (id == null)
+            if (number == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var movies = db.Animes.OrderByDescending(x => x.name).Take(10);
+                return View(movies);
+
             }
             Anime anime = db.Animes.Find(id);
+            var animes = db.Animes.OrderByDescending(x => x.name).Take((int)number);
             if (anime == null)
             {
                 return HttpNotFound();
             }
             return View(anime);
-        }
+        }  
+
 
 
         protected override void Dispose(bool disposing)
