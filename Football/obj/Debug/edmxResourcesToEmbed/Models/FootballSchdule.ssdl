@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_128040_practiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Anime">
+    <Key>
+      <PropertyRef Name="anime_id" />
+    </Key>
+    <Property Name="anime_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="genre" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="nvarchar" MaxLength="255" />
+    <Property Name="episodes" Type="float" />
+    <Property Name="rating" Type="float" />
+    <Property Name="members" Type="float" />
+  </EntityType>
+  <EntityType Name="FootballSchedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Season" Type="int" Nullable="false" />
+    <Property Name="Opponent" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="IsHomeGame" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spotify">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Artist" Type="nvarchar" MaxLength="255" />
+    <Property Name="Top Genre" Type="nvarchar" MaxLength="255" />
+    <Property Name="Year" Type="float" />
+    <Property Name="Beats Per Minute" Type="float" />
+    <Property Name="Energy" Type="float" />
+    <Property Name="Danceability" Type="float" />
+    <Property Name="Loudness" Type="float" />
+    <Property Name="Liveness" Type="float" />
+    <Property Name="Valence" Type="float" />
+    <Property Name="Duration" Type="float" />
+    <Property Name="Acousticness" Type="float" />
+    <Property Name="Speechiness" Type="float" />
+    <Property Name="Popularity" Type="float" />
+  </EntityType>
+  <EntityContainer Name="DB_128040_practiceModelStoreContainer">
+    <EntitySet Name="Anime" EntityType="Self.Anime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FootballSchedule" EntityType="Self.FootballSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Spotify" EntityType="Self.Spotify" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

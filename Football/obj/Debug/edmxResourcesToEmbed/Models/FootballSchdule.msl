@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_128040_practiceModelStoreContainer" CdmEntityContainer="DB_128040_practiceEntities">
+    <EntitySetMapping Name="Animes">
+      <EntityTypeMapping TypeName="DB_128040_practiceModel.Anime">
+        <MappingFragment StoreEntitySet="Anime">
+          <ScalarProperty Name="anime_id" ColumnName="anime_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="episodes" ColumnName="episodes" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="members" ColumnName="members" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FootballSchedules">
+      <EntityTypeMapping TypeName="DB_128040_practiceModel.FootballSchedule">
+        <MappingFragment StoreEntitySet="FootballSchedule">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Opponent" ColumnName="Opponent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsHomeGame" ColumnName="IsHomeGame" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spotifies">
+      <EntityTypeMapping TypeName="DB_128040_practiceModel.Spotify">
+        <MappingFragment StoreEntitySet="Spotify">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Artist" ColumnName="Artist" />
+          <ScalarProperty Name="Top_Genre" ColumnName="Top Genre" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Beats_Per_Minute" ColumnName="Beats Per Minute" />
+          <ScalarProperty Name="Energy" ColumnName="Energy" />
+          <ScalarProperty Name="Danceability" ColumnName="Danceability" />
+          <ScalarProperty Name="Loudness" ColumnName="Loudness" />
+          <ScalarProperty Name="Liveness" ColumnName="Liveness" />
+          <ScalarProperty Name="Valence" ColumnName="Valence" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Acousticness" ColumnName="Acousticness" />
+          <ScalarProperty Name="Speechiness" ColumnName="Speechiness" />
+          <ScalarProperty Name="Popularity" ColumnName="Popularity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
