@@ -10,7 +10,7 @@ using Football.Models;
 
 namespace Football.Controllers
 {
-    public class AnimesController : Controller
+    public class AnimeController : Controller
     {
         private DB_128040_practiceEntities db = new DB_128040_practiceEntities();
 

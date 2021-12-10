@@ -10,20 +10,25 @@ using Football.Models;
 
 namespace Football.Controllers
 {
-    public class SpotifiesController : Controller
+    public class SpotifyController : Controller
     {
         private DB_128040_practiceEntities db = new DB_128040_practiceEntities();
 
         // GET: Spotifies
         public ActionResult Index()
         {
-            var spots = db.Spotifies.OrderByDescending(x => x.Popularity).Take(10);
+            var spots = db.Spotifies.OrderByDescending(x => x.Popularity);
 
+            return View(spots);
+        }
+
+        public ActionResult Artist()
+        {
             return View(db.Spotifies.ToList());
         }
 
         // GET: Spotifies/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Songs(int? id)
         {
             if (id == null)
             {
@@ -33,6 +38,7 @@ namespace Football.Controllers
             if (spotify == null)
             {
                 return HttpNotFound();
+
             }
             return View(spotify);
         }
