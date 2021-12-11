@@ -34,6 +34,20 @@ namespace EFPractice.Controllers
             }
             return View(director);
         }
+        public ActionResult Info(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Director director = db.Directors.Find(id);
+            if (director == null)
+            {
+                return HttpNotFound();
+            }
+            return View(director);
+        }
+
 
 
         protected override void Dispose(bool disposing)

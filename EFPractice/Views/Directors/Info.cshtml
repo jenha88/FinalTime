@@ -1,4 +1,4 @@
-﻿@model EFPractice.Models.Director
+﻿@model EFPractice.Models.Movie
 
 @{
     ViewBag.Title = "Info";
@@ -6,15 +6,17 @@
 
 <h2>Info</h2>
 
-<div>
-    <h4>Director</h4>
-    <hr />
-        
-        @foreach (var item in Model.Dir) 
-        {
-        <li>
-            <a href="@item."></a>
-        </li>
-        }
-  
-</div>
+
+    <h4>Directors @Model.Director.Director_Name</h4>
+    <hr/>
+    <p> Movies Include</p>
+@foreach (var item in Model.Director.Movies)
+{
+    <li>
+        <a href="@item.movie_imdb_link" style="text-decoration:none">@item.movie_title</a> that came out in @item.title_year
+    </li>
+}
+
+
+
+

@@ -20,7 +20,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Director_Name)
         </td>
-  
+  <td>
+     @Html.ActionLink("Info","Info", new { id = item.Director_Id }, new { style = "text-decoration:none" })
+  </td>
     </tr>
 }
 
