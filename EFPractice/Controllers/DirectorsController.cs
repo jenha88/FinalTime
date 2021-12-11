@@ -40,7 +40,7 @@ namespace EFPractice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Director director = db.Directors.Find(id);
+            Movie director = db.Movies.Find(id);
             if (director == null)
             {
                 return HttpNotFound();
