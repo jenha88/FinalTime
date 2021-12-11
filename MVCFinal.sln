@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beginner", "Beginner\Beginn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football", "Football\Football.csproj", "{CEB59157-FBC4-4D24-B238-7E805D3C5E50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFPractice", "EFPractice\EFPractice.csproj", "{41D54AF2-4C03-431B-8A90-D01D83B52203}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CEB59157-FBC4-4D24-B238-7E805D3C5E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB59157-FBC4-4D24-B238-7E805D3C5E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB59157-FBC4-4D24-B238-7E805D3C5E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D54AF2-4C03-431B-8A90-D01D83B52203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D54AF2-4C03-431B-8A90-D01D83B52203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D54AF2-4C03-431B-8A90-D01D83B52203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D54AF2-4C03-431B-8A90-D01D83B52203}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
