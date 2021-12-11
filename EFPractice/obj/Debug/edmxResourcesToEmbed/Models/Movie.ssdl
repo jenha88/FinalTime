@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_128040_practiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="Director_Id" />
+    </Key>
+    <Property Name="Director_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Director_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Movie_Id" />
+    </Key>
+    <Property Name="Movie_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="director_id" Type="int" Nullable="false" />
+    <Property Name="color" Type="nvarchar" MaxLength="150" />
+    <Property Name="num_critic_for_reviews" Type="int" />
+    <Property Name="duration" Type="int" />
+    <Property Name="director_facebook_likes" Type="int" />
+    <Property Name="actor_3_facebook_likes" Type="int" />
+    <Property Name="actor_2_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="actor_1_facebook_likes" Type="int" />
+    <Property Name="gross" Type="bigint" />
+    <Property Name="genres" Type="nvarchar" MaxLength="150" />
+    <Property Name="actor_1_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="movie_title" Type="nvarchar" MaxLength="150" />
+    <Property Name="num_voted_users" Type="int" />
+    <Property Name="cast_total_facebook_likes" Type="int" />
+    <Property Name="actor_3_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="facenumber_in_poster" Type="int" />
+    <Property Name="plot_keywords" Type="nvarchar" MaxLength="150" />
+    <Property Name="movie_imdb_link" Type="nvarchar" MaxLength="150" />
+    <Property Name="num_user_for_reviews" Type="int" />
+    <Property Name="language" Type="nvarchar" MaxLength="150" />
+    <Property Name="country" Type="nvarchar" MaxLength="150" />
+    <Property Name="content_rating" Type="nvarchar" MaxLength="150" />
+    <Property Name="budget" Type="bigint" />
+    <Property Name="title_year" Type="int" />
+    <Property Name="actor_2_facebook_likes" Type="int" />
+    <Property Name="imdb_score" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="aspect_ratio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="movie_facebook_likes" Type="int" />
+  </EntityType>
+  <Association Name="FK_Movie_Director">
+    <End Role="Director" Type="Self.Director" Multiplicity="1" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Director">
+        <PropertyRef Name="Director_Id" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="director_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_128040_practiceModelStoreContainer">
+    <EntitySet Name="Director" EntityType="Self.Director" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Movie_Director" Association="Self.FK_Movie_Director">
+      <End Role="Director" EntitySet="Director" />
+      <End Role="Movie" EntitySet="Movie" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

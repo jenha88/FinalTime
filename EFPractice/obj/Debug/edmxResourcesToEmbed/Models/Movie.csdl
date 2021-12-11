@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_128040_practiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="Director_Id" />
+    </Key>
+    <Property Name="Director_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Director_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movies" Relationship="Self.FK_Movie_Director" FromRole="Director" ToRole="Movie" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Movie_Id" />
+    </Key>
+    <Property Name="Movie_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="director_id" Type="Int32" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="num_critic_for_reviews" Type="Int32" />
+    <Property Name="duration" Type="Int32" />
+    <Property Name="director_facebook_likes" Type="Int32" />
+    <Property Name="actor_3_facebook_likes" Type="Int32" />
+    <Property Name="actor_2_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="actor_1_facebook_likes" Type="Int32" />
+    <Property Name="gross" Type="Int64" />
+    <Property Name="genres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="actor_1_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="movie_title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="num_voted_users" Type="Int32" />
+    <Property Name="cast_total_facebook_likes" Type="Int32" />
+    <Property Name="actor_3_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="facenumber_in_poster" Type="Int32" />
+    <Property Name="plot_keywords" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="movie_imdb_link" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="num_user_for_reviews" Type="Int32" />
+    <Property Name="language" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="content_rating" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="budget" Type="Int64" />
+    <Property Name="title_year" Type="Int32" />
+    <Property Name="actor_2_facebook_likes" Type="Int32" />
+    <Property Name="imdb_score" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="aspect_ratio" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="movie_facebook_likes" Type="Int32" />
+    <NavigationProperty Name="Director" Relationship="Self.FK_Movie_Director" FromRole="Movie" ToRole="Director" />
+  </EntityType>
+  <Association Name="FK_Movie_Director">
+    <End Role="Director" Type="Self.Director" Multiplicity="1" />
+    <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Director">
+        <PropertyRef Name="Director_Id" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="director_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_128040_practiceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Directors" EntityType="Self.Director" />
+    <EntitySet Name="Movies" EntityType="Self.Movie" />
+    <AssociationSet Name="FK_Movie_Director" Association="Self.FK_Movie_Director">
+      <End Role="Director" EntitySet="Directors" />
+      <End Role="Movie" EntitySet="Movies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EFPractice.Models.Director>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Director_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director_Name)
+        </td>
+  
+    </tr>
+}
+
+</table>

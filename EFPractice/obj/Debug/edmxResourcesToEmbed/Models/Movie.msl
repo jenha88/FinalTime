@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_128040_practiceModelStoreContainer" CdmEntityContainer="DB_128040_practiceEntities">
+    <EntitySetMapping Name="Directors">
+      <EntityTypeMapping TypeName="DB_128040_practiceModel.Director">
+        <MappingFragment StoreEntitySet="Director">
+          <ScalarProperty Name="Director_Name" ColumnName="Director_Name" />
+          <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="DB_128040_practiceModel.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="director_id" ColumnName="director_id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="num_critic_for_reviews" ColumnName="num_critic_for_reviews" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="director_facebook_likes" ColumnName="director_facebook_likes" />
+          <ScalarProperty Name="actor_3_facebook_likes" ColumnName="actor_3_facebook_likes" />
+          <ScalarProperty Name="actor_2_name" ColumnName="actor_2_name" />
+          <ScalarProperty Name="actor_1_facebook_likes" ColumnName="actor_1_facebook_likes" />
+          <ScalarProperty Name="gross" ColumnName="gross" />
+          <ScalarProperty Name="genres" ColumnName="genres" />
+          <ScalarProperty Name="actor_1_name" ColumnName="actor_1_name" />
+          <ScalarProperty Name="movie_title" ColumnName="movie_title" />
+          <ScalarProperty Name="num_voted_users" ColumnName="num_voted_users" />
+          <ScalarProperty Name="cast_total_facebook_likes" ColumnName="cast_total_facebook_likes" />
+          <ScalarProperty Name="actor_3_name" ColumnName="actor_3_name" />
+          <ScalarProperty Name="facenumber_in_poster" ColumnName="facenumber_in_poster" />
+          <ScalarProperty Name="plot_keywords" ColumnName="plot_keywords" />
+          <ScalarProperty Name="movie_imdb_link" ColumnName="movie_imdb_link" />
+          <ScalarProperty Name="num_user_for_reviews" ColumnName="num_user_for_reviews" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="content_rating" ColumnName="content_rating" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="title_year" ColumnName="title_year" />
+          <ScalarProperty Name="actor_2_facebook_likes" ColumnName="actor_2_facebook_likes" />
+          <ScalarProperty Name="imdb_score" ColumnName="imdb_score" />
+          <ScalarProperty Name="aspect_ratio" ColumnName="aspect_ratio" />
+          <ScalarProperty Name="movie_facebook_likes" ColumnName="movie_facebook_likes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
